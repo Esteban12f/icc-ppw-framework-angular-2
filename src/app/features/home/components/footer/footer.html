@@ -1,3 +1,9 @@
 <footer class="footer">
-  <p>© {{ anio() }} Programación y Plataformas Web</p>
+
+    <p>{{ mensaje() | uppercase }}</p>
+    <p>{{ mensaje() | lowercase }}</p>
+    <p>{{ anio() | number }}</p>
+
+    <p>© {{ anio() }} Programación y Plataformas Web</p>
+
 </footer>
