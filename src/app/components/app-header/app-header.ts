@@ -1,30 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, UpperCasePipe],
   templateUrl: './app-header.html',
   styleUrl: './app-header.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppHeader {
+export class AppHeaderComponent {
   readonly brand = signal('PPW Angular');
-  readonly showInfo = signal(false);
-
-  readonly toggleLabel = computed(() => this.showInfo() ? 'Ocultar Info' : 'Mostrar Info');
-uppercase: string | undefined;
-
-  changeBrand(): void {
-    this.brand.update((valor) => valor + '!');
-  }
-
-  resetBrand(): void {
-    this.brand.set('PPW Angular');
-  }
-
-  toggleInfo(): void {
-    this.showInfo.update((value) => !value);
-  }
-
 }

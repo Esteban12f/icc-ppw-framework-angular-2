@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-home-page',
   imports: [Hero],
   templateUrl: './home-page.html',
+  styleUrl: './home-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
