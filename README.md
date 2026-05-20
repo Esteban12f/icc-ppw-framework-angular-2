@@ -161,3 +161,18 @@ Es útil para diseños alternados o composiciones visuales dinámicas.
 
 ## Captura del formulario con todos los errores visibles (después de submit)
 ![errores después de submit](README-assets/errores-submit.png)
+
+---
+
+# Práctica 5-C - Formularios Reactivos
+## Captura del formulario vacío/inicial
+![formulario vacío](README-assets/formulario-vacio.png)
+
+## Captura mostrando todos los errores de validación
+![erroes de validación](README-assets/errores-validacion.png)
+
+## Captura con el formulario válido y datos completos
+![formulario válido](README-assets/formulario-valido.png)
+
+## Captura de consola con el objeto `myForm.value` al hacer submit
+![datos en la consola](README-assets/datos-consola.png)
