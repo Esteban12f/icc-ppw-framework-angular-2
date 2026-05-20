@@ -142,3 +142,22 @@ Es útil para diseños alternados o composiciones visuales dinámicas.
 - `shadow-md`
 - `rounded-2xl`
 
+--- 
+
+# Práctica 5-A - Formularios Reactivos
+
+## Captura del formulario donde se muestran todos los errores
+![Errores](README-assets/errores.png)
+
+## Captura del input email con el error de la valicación asincrona
+![Validación Asincrona](README-assets/asincrona.png)
+
+---
+
+# Práctica 5-B - Formularios Reactivos
+
+## Captura del formulario vacío mostrando el estado inicial
+![Estado inicial del formulario](README-assets/estado-inicial.png)
+
+## Captura del formulario con todos los errores visibles (después de submit)
+![errores después de submit](README-assets/errores-submit.png)
