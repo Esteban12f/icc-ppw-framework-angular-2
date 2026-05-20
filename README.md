@@ -57,3 +57,88 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+#
+
+# Práctica 4 - Estilos y Layouts con Tailwind
+
+## Layouts adicionales implementados 
+En esta práctica se agregaron cuatro distribuciones adicionales utilizando TailwindCSS para explorar diferentes configuraciones de Grid y FlexBox.
+
+---
+
+# 1. Grid Auto-Fit Responsive
+
+![Grid Auto Fit](README-assets/grid-autofit.png)
+
+## Explicación:
+Este layout utiliza una grilla responsive automática usando `repeat(auto-fit, minmax())`. Las columnas se ajustan automáticamente según el espacio disponible en pantalla, permitiendo que los cards se acomoden dinámicamente sin definir un número fijo de columnas.
+
+## Clases principales utilizadas
+* `grid`
+* `gap-4`
+* `grid-cols-[repeat(auto-fit,minmax(220px,1fr))]`
+* `rounded-2xl`
+* `bg-linear-to-br`
+* `shadow-lg`
+
+---
+
+# 2. Grid con filas personalizadas
+
+![Grid Rows](README-assets/grid-rows.png)
+
+## Explicación
+
+Este layout utiliza filas personalizadas con `grid-rows`.
+Permite distribuir contenido verticalmente manteniendo una estructura organizada y uniforme entre cards de diferentes tamaños.
+
+## Clases principales utilizadas
+
+- `grid`
+- `md:grid-cols-2`
+- `grid-rows-2`
+- `gap-4`
+- `shadow-md`
+- `bg-slate-50`
+
+---
+
+# 3. Flex Responsive Column → Row
+
+![Flex Responsive](README-assets/flex-responsive.png)
+
+## Explicación
+
+Este layout cambia dinámicamente la dirección del flex según el tamaño de pantalla.
+En dispositivos pequeños los elementos se apilan verticalmente (`flex-col`) y en pantallas medianas cambian a distribución horizontal (`md:flex-row`).
+
+## Clases principales utilizadas
+
+- `flex`
+- `flex-col`
+- `md:flex-row`
+- `gap-4`
+- `rounded-2xl`
+- `shadow-lg`
+
+---
+
+# 4. Flex Reverse Layout
+
+![Flex Reverse](README-assets/flex-reverse.png)
+
+## Explicación
+
+Este layout utiliza `flex-row-reverse` para invertir visualmente el orden de los elementos dentro del contenedor flex.
+Es útil para diseños alternados o composiciones visuales dinámicas.
+
+## Clases principales utilizadas
+
+- `flex`
+- `flex-row-reverse`
+- `gap-4`
+- `bg-linear-to-r`
+- `shadow-md`
+- `rounded-2xl`
+

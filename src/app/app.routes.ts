@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { HomePage } from './features/home/pages/home-page/home-page';
 import { StudentPage } from './features/students/pages/student-page/student-page';
 import { StudentDetailPage } from './features/students/pages/student-detail-page/student-detail-page';
+import { LayoutsPage } from './features/layouts/pages/layouts-page/layouts-page';
 
 export const routes: Routes = [
 
@@ -11,6 +12,8 @@ export const routes: Routes = [
     {path: 'student',component: StudentPage},
 
     {path: 'student/:id',component: StudentDetailPage},
+
+    { path: 'layouts', component: LayoutsPage },
 
     // Redireccionamiento
     {path: '**',redirectTo: ''}
