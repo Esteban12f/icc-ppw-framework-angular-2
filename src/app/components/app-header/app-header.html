@@ -1,54 +1,142 @@
-<header class="app-header">
+<header class="max-lg:collapse bg-base-100 shadow-sm w-full rounded-md">
+  <input id="navbar-toggle" class="peer hidden" type="checkbox" />
 
-  <!-- Título de la app: signal brand transformado a mayúsculas con el pipe -->
-  <span class="app-header__brand">{{ brand() | uppercase }}</span>
+  <label for="navbar-toggle" class="fixed inset-0 hidden max-lg:peer-checked:block"></label>
 
-  <!--
-    routerLink="/" y routerLink="/students" navegan internamente sin recargar.
-    Aún no hay indicador visual de cuál está activo.
-  -->
-    <nav class="app-header__nav">
-  <!--
-    [routerLinkActiveOptions]="{ exact: true }" → solo activo cuando la URL es exactamente "/".
-    Sin esto, "/" estaría activo también en /students, /profile, etc.
-  -->
-  <a class="nav-link"
-     routerLink="/"
-     routerLinkActive="nav-link--active"
-     [routerLinkActiveOptions]="{ exact: true }">
-    Inicio
-  </a>
+  <div class="collapse-title navbar min-h-20 px-6">
+    <!-- LEFT -->
+    <div class="navbar-start">
+      <!-- MOBILE BUTTON -->
+      <label for="navbar-toggle" class="btn btn-ghost lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+      </label>
 
-  <!-- Estudiantes no necesita exact: "/students" no es prefijo de ninguna otra ruta. -->
-  <a class="nav-link"
-     routerLink="/student"
-     routerLinkActive="nav-link--active">
-    Estudiantes
-  </a>
+      <!-- BRAND -->
+      <a class="btn btn-ghost text-2xl font-black" routerLink="/">
+        {{ brand() | uppercase }}
+      </a>
+    </div>
 
-  <a class="nav-link"
-    routerLink="/layouts"
-    routerLinkActive="nav-link--active">
-    Layouts
-  </a>
+    <!-- DESKTOP -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 text-base font-medium">
+        <li>
+          <a
+            class="px-4"
+            routerLink="/"
+            routerLinkActive="menu-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Inicio
+          </a>
+        </li>
 
-  <a class="nav-link"
-    routerLink="/signup"
-    routerLinkActive="nav-link--active">
-    Sign Up
-  </a>
+        <li>
+          <a routerLink="/student" routerLinkActive="menu-active"> Estudiantes </a>
+        </li>
 
-  <a class="nav-link"
-    routerLink="/profile"
-    routerLinkActive="nav-link--active">
-    Perfil
-  </a>
+        <li>
+          <a routerLink="/layouts" routerLinkActive="menu-active"> Layouts </a>
+        </li>
 
-  <a class="nav-link"
-    routerLink="/project-config"
-    routerLinkActive="nav-link--active">
-    Configurar Proyecto
-  </a>
+        <!-- SUBMENU -->
+        <li>
+          <details>
+            <summary>Formularios</summary>
 
-</nav>
+            <ul class="p-2 bg-base-100 rounded-box shadow">
+              <li>
+                <a routerLink="/signup" routerLinkActive="menu-active"> Signup </a>
+              </li>
+
+              <li>
+                <a routerLink="/profile" routerLinkActive="menu-active"> Perfil </a>
+              </li>
+
+              <li>
+                <a routerLink="/project-config" routerLinkActive="menu-active">
+                  Configurar Proyecto
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li>
+          <a routerLink="/ui-components" routerLinkActive="menu-active"> UI Components </a>
+        </li>
+
+        <li><a routerLink="/simpsons" routerLinkActive="active">Simpsons</a></li>
+
+      </ul>
+    </div>
+
+    <div class="navbar-end"></div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="collapse-content lg:hidden z-10">
+    <ul class="menu rounded-box bg-base-200 text-base font-medium">
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="menu-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Inicio
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/student" routerLinkActive="menu-active"> Estudiantes </a>
+      </li>
+
+      <li>
+        <a routerLink="/layouts" routerLinkActive="menu-active"> Layouts </a>
+      </li>
+
+      <!-- MOBILE SUBMENU -->
+      <li>
+        <details>
+          <summary>Formularios</summary>
+
+          <ul class="text-base font-medium">
+            <li>
+              <a routerLink="/signup" routerLinkActive="menu-active"> Signup </a>
+            </li>
+
+            <li>
+              <a routerLink="/profile" routerLinkActive="menu-active"> Perfil </a>
+            </li>
+
+            <li>
+              <a routerLink="/project-config" routerLinkActive="menu-active">
+                Configurar Proyecto
+              </a>
+            </li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <a routerLink="/ui-components" routerLinkActive="menu-active"> UI Components </a>
+      </li>
+
+      <li><a routerLink="/simpsons" routerLinkActive="active">Simpsons</a></li>
+      
+    </ul>
+  </div>
 </header>

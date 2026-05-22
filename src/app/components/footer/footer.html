@@ -1,9 +1,36 @@
-<footer class="footer">
+<footer class="mt-10 border border-base-200 bg-base-300 text-base-content shadow-sm">
+  <div class="mx-auto grid max-w-7xl gap-10 p-10 md:grid-cols-3">
+    <!-- COLUMNA 1 -->
+    <nav class="flex flex-col gap-2">
+      <h6 class="footer-title">PPW</h6>
 
-    <p>{{ mensaje() | uppercase }}</p>
-    <p>{{ mensaje() | lowercase }}</p>
-    <p>{{ anio() | number }}</p>
+      <a class="link link-hover"> Angular 21 </a>
 
-    <p>© {{ anio() }} Programación y Plataformas Web</p>
+      <a class="link link-hover"> TailwindCSS </a>
 
+      <a class="link link-hover"> DaisyUI </a>
+    </nav>
+
+    <!-- COLUMNA 2 -->
+    <nav class="flex flex-col gap-2">
+      <h6 class="footer-title">Navegación</h6>
+
+      <a class="link link-hover" routerLink="/"> Inicio </a>
+
+      <a class="link link-hover" routerLink="/students"> Estudiantes </a>
+
+      <a class="link link-hover" routerLink="/ui-components"> Componentes </a>
+    </nav>
+
+    <!-- COLUMNA 3 -->
+    <nav class="flex flex-col gap-2">
+      <h6 class="footer-title">Curso</h6>
+
+      <a class="link link-hover"> Layouts responsive </a>
+
+      <a class="link link-hover"> Formularios </a>
+
+      <a class="link link-hover"> HTTP </a>
+    </nav>
+  </div>
 </footer>
