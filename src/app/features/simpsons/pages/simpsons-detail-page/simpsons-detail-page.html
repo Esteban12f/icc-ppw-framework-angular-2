@@ -44,14 +44,37 @@
             {{ characterResource.value()!.age ?? 'No registrada' }}
           </p>
 
-          <span
-            class="badge badge-lg"
-            [class.badge-success]="characterResource.value()!.status === 'Alive'"
-            [class.badge-error]="characterResource.value()!.status === 'Deceased'"
-            [class.badge-warning]="characterResource.value()!.status !== 'Alive' && characterResource.value()!.status !== 'Deceased'"
-          >
-            {{ characterResource.value()!.status || 'Desconocido' }}
-          </span>
+          <div class="flex items-center gap-2">
+            <span
+              class="badge badge-lg"
+              [class.badge-success]="characterResource.value()!.status === 'Alive'"
+              [class.badge-error]="characterResource.value()!.status === 'Deceased'"
+              [class.badge-warning]="characterResource.value()!.status !== 'Alive' && characterResource.value()!.status !== 'Deceased'"
+            >
+              {{ characterResource.value()!.status || 'Desconocido' }}
+            </span>
+          </div>
+
+          <div class="pt-2">
+            @if (authService.currentUser()) {
+              <button
+                class="btn btn-outline btn-sm"
+                [class.btn-warning]="isFavorite()"
+                (click)="toggleFavorite()"
+              >
+                @if (isFavorite()) {
+                  ★ Guardado en favoritos
+                } @else {
+                  ☆ Agregar a favoritos
+                }
+              </button>
+            } @else {
+              <a class="btn btn-ghost btn-sm px-0 link link-primary" routerLink="/auth">
+                Inicia sesion para guardar favoritos
+              </a>
+            }
+          </div>
+
         </div>
       </div>
     </article>
