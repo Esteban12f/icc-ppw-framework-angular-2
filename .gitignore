@@ -44,5 +44,4 @@ __screenshots__/
 Thumbs.db
 
 serviceAccountKey.json
-
-src/environments/environment.ts
+environment.ts
